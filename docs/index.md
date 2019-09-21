@@ -52,7 +52,7 @@ Please go through our article on '<a href="https://workat.tech/machine-coding/ar
 - No need to create a GUI
 
 ## Problem Statement
-<a href="problem-statement" target="_blank">TBD</a>
+<a href="problem-statement" target="_blank">Splitwise</a>
 
 ## Submission
 - After you're done with coding, you need to commit and push your changes to github.
