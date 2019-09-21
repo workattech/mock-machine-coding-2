@@ -17,11 +17,11 @@ class Splitwise:
             owe_users = expense[4:-1]
             self.add_equal_expense(paid_by, amt, tot_users, owe_users)
         elif EXACT in expense:
-            paid_by = expense[1]
-            amt = expense[2]
-            tot_users = expense[3]
-            owe_users = expense[4:-1]
+            #remaining
+            self.add_Exact_Expense()
         elif PERCENT in expense:
+            #remaining
+            self.add_percent_expense()
 
     def show_all_expense(self, expense):
         pass
