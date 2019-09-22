@@ -15,10 +15,10 @@ You live with 3 other friends.
 You: User1 (id: u1)
 Flatmates: User2 (u2), User3 (u3), User4 (u4) 
 
-This month's electricity bill was Rs. 1250.
-Now you can just go to the app and add that you paid 1250,
+This month's electricity bill was Rs. 1000.
+Now you can just go to the app and add that you paid 1000,
 select all the 4 people and then select split equally.
-Input: u1 1250 4 u1 u2 u3 u4 EQUAL
+Input: u1 1000 4 u1 u2 u3 u4 EQUAL
 
 For this transaction, everyone owes 250 to User1.
 The app should update the balances in each of the profiles accordingly. 
@@ -88,7 +88,7 @@ User3 owes User4: 240 (0+240)
 ```
 SHOW
 SHOW u1
-EXPENSE u1 1250 4 u1 u2 u3 u4 EQUAL
+EXPENSE u1 1000 4 u1 u2 u3 u4 EQUAL
 SHOW u4
 SHOW u1
 EXPENSE u1 1250 2 u2 u3 EXACT 370 880
