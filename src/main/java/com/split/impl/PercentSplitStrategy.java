@@ -1,7 +1,5 @@
 package com.split.impl;
 
-import com.dao.ExpenseDao;
-import com.dao.impl.InMemoryExpenseDao;
 import com.models.Borrow;
 import com.models.Transaction;
 import com.split.SplitStrategy;
