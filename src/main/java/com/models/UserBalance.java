@@ -50,7 +50,7 @@ public class UserBalance {
 
   public List<Borrow> getAllReceiveFrom() {
     List<Borrow> allReceiveFrom = new ArrayList<>();
-    payTo.forEach((key, value) -> {
+    receiveFrom.forEach((key, value) -> {
       allReceiveFrom.add(Borrow.builder().lender(userId).borrower(key).amount(value).build());
     });
     return allReceiveFrom;
