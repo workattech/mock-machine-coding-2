@@ -1,52 +1,132 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
+import java.util.Objects;
+import java.util.Set;
+import java.util.function.Predicate;
 
 public class BalanceSheet {
 
-	private Map<Pair, List<Expense>> sheet;
+    private Map<TradePair, List<Expense>> sheet;
+    private ExpenseGraph expenseGraph;
 
-	public BalanceSheet() {
+    public BalanceSheet() {
 
-		sheet = new HashMap<>();
-	}
+        sheet = new HashMap<>();
+        expenseGraph = new ExpenseGraph();
+    }
 
-	public void addExpense(String lender, String borrower, Expense expense) {
+    public void addExpense(String lender, String borrower, Expense expense) {
 
-		Pair pair = new Pair(lender, borrower);
+        TradePair pair = new TradePair(lender, borrower);
 
-		if (sheet.containsKey(pair))
-			sheet.get(pair).add(expense);
-		else
-			sheet.computeIfAbsent(pair, k -> new ArrayList<>()).add(expense);
-	}
 
-	public List<String> showExpense(String user) {
+        if (sheet.containsKey(pair))
+            sheet.get(pair).add(expense);
+        else
+            sheet.computeIfAbsent(pair, k -> new ArrayList<>()).add(expense);
 
-		List<String> logs = new ArrayList<>();
+        expenseGraph.add(lender, borrower, expense.getAmount());
 
-		sheet.entrySet().stream().filter(entry -> {
-			if (user.isEmpty())
-				return true;
-			return entry.getKey().getLender().equals(user) || entry.getKey().getBorrower().equals(user);
-		}).forEach(entry -> {
+    }
 
-			StringBuilder sb = new StringBuilder();
-			String lender = entry.getKey().getLender();
-			String borrower = entry.getKey().getBorrower();
+    public Map<TradePair, List<Expense>> getSheet() {
+        return sheet;
+    }
 
-			double expense = entry.getValue().stream().flatMap(i -> Stream.of(i.getAmount()))
-					.reduce(0.0, (sum, cost) -> sum += cost).doubleValue();
-			logs.add(sb.append(borrower + " owes " + lender + ": ").append(expense).toString());
+    public List<String> showExpense(String user) {
+        return expenseGraph.generateFor(user);
+    }
 
-		});
 
-		if (logs.isEmpty())
-			logs.add("No balances");
+}
 
-		return logs;
-	}
+class ExpenseGraph {
 
+
+    private Map<String, Map<String, Double>> graph;
+
+    public ExpenseGraph() {
+        this.graph = new HashMap<>();
+    }
+
+
+    public List<String> generateFor(String user) {
+        List<String> logs = new ArrayList<>();
+
+
+        graph.entrySet().stream().forEach(lender -> {
+
+            lender.getValue().entrySet().stream().filter(entry -> {
+                if (user.isEmpty() || lender.getKey().equals(user))
+                    return true;
+                return entry.getKey().equals(user);
+            }).forEach(borrower -> {
+
+                logs.add(new StringBuilder().append(borrower.getKey() + " owes " + lender.getKey() + ": ").append(borrower.getValue()).toString());
+
+            });
+
+
+        });
+        if (logs.isEmpty())
+            logs.add("No balances");
+
+        return logs;
+    }
+
+    private void addEdge(String from, String to, final double amount) {
+        if (graph.containsKey(from)) {
+
+            Map<String, Double> fromToEdges = graph.get(from);
+
+            fromToEdges.compute(to, (key, value) -> value == null ? amount : value + amount);
+
+
+        } else {
+            Map<String, Double> fromToEdges = new HashMap<>();
+            fromToEdges.put(to, amount);
+            graph.put(from, fromToEdges);
+        }
+    }
+
+    private void removeEdge(String from, String to) {
+        graph.get(from).remove(to);
+    }
+
+    public void add(String lender, String borrower, double amount) {
+
+
+        if (graph.containsKey(borrower)) {
+
+            Map<String, Double> toFromEdges = graph.get(borrower);
+
+
+            double prevAmount = toFromEdges.getOrDefault(lender, -1.0);
+
+
+            if (Double.compare(prevAmount, -1.0) == 0) {
+                addEdge(lender, borrower, amount);
+            } else {
+                int compare = Double.compare(prevAmount, amount);
+                if (compare <= 0) {
+                    removeEdge(borrower, lender);
+                }
+
+
+                if (compare == -1) {
+                    addEdge(lender, borrower, amount - prevAmount);
+                } else if (compare == 1) {
+                    addEdge(borrower, lender, -amount);
+                }
+            }
+
+        } else {
+            addEdge(lender, borrower, amount);
+        }
+
+
+    }
 }
