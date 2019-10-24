@@ -18,7 +18,7 @@
 Please go through our article on '<a href="https://workat.tech/machine-coding/article/how-to-prepare-for-machine-coding-round-naf2ih7a9e5l" target="_blank">How to prepare for machine coding round?</a>'.
 
 ## Sample problem and solution approach
-- <a href="https://workattech.github.io/mock-machine-coding-1" target="_blank">Snake and Ladder problem statement</a>
+- <a href="https://workat.tech/machine-coding/practice/snake-and-ladder-problem-zgtac9lxwntg" target="_blank">Snake and Ladder problem statement</a>
 - <a href="https://workat.tech/machine-coding/article/how-to-design-snake-and-ladder-machine-coding-ehskk9c40x2w" target="_blank">Snake and Ladder solution approach</a>
 
 ## Event Format
@@ -52,7 +52,7 @@ Please go through our article on '<a href="https://workat.tech/machine-coding/ar
 - No need to create a GUI
 
 ## Problem Statement
-<a href="problem-statement" target="_blank">Splitwise</a>
+<a href="https://workat.tech/machine-coding/practice/splitwise-problem-0kp2yneec2q2" target="_blank">Splitwise</a>
 
 ## Submission
 - After you're done with coding, you need to commit and push your changes to github.
