@@ -3,49 +3,9 @@
 #include<string>
 #define no_of_user 4
 using namespace std;
-class User{
-    string userid;
-    string name, email;
-    long int mobile;
-    public:
-        User(string userid="",string name="",string email="",long int mobile=0)
-        {
-            this->userid = userid;
-            this->name = name;
-            this->email = email;
-            this->mobile = mobile;
-        }
-        string getName()
-        {
-            return name;
-        }
-        string getId()
-        {
-            return userid;
-        }
-        string getEmail()
-        {
-            return email;
-        }
-
-};
-vector<string> generateTokens(string s)
-{
-    vector<string> tokens;
-    int n = s.length();
-    for(int i=0;i<n;i++)
-    {
-        string temp;
-        while(i<n && s[i]!=' ')
-        {
-            temp.push_back(s[i]);i++;
-        }
-        tokens.push_back(temp);
-    }
-    return tokens;
-}
 class Splitwise
 {
+    //Balance sheet which keeps the record of which user owes whom and how much
     vector<vector<int>> balanceSheet;
     vector<User> users;
     public:
@@ -167,30 +127,3 @@ class Splitwise
             return i;
         }
 };
-
-int main()
-{
-    User u1("u1","user1","",0),u2("u2","user2","",0),u3("u3","user3","",0),u4("u4","user4","",0);
-    vector<User> users;
-    users.push_back(u1);
-    users.push_back(u2);
-    users.push_back(u3);
-    users.push_back(u4);
-    Splitwise sw(users);
-    sw.showAll();
-    int n;
-    cin>>n;
-    //cout<<n<<endl;
-    while(n)
-    {
-        string s;
-        //cout<<"Enter string : ";
-        getline(cin,s);
-        //cout<<s<<endl;
-        //cout<<"input string is : "<<s<<endl;
-        vector<string> tokens = generateTokens(s);
-        sw.Call(tokens);
-        n--;
-    }
-    return 0;
-}

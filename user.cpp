@@ -1,3 +1,4 @@
+#include<string>
 class user{
     int userid;
     string name, email;
