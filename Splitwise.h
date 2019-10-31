@@ -5,7 +5,6 @@
 using namespace std;
 class Splitwise
 {
-    //Balance sheet which keeps the record of which user owes whom and how much
     vector<vector<int>> balanceSheet;
     vector<User> users;
     public:
