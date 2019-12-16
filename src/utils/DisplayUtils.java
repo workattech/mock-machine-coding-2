@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import model.ExpenseInfo;
+import model.ExpenseRegistry;
 import model.User;
 import model.UserRegistry;
 
@@ -47,5 +49,14 @@ public class DisplayUtils {
   private static String fmtMoney(long money) {
     money = (money < 0) ? money * -1 : money;
     return String.valueOf((money / 100) + "." + (money % 100));
+  }
+
+  public static String getUserExpenseHistory(User user) {
+    List<ExpenseInfo> expenses = ExpenseRegistry.forUser(user);
+    Set<String> expenseStrings = new HashSet<>();
+    for(ExpenseInfo expenseInfo : expenses) {
+      expenseStrings.add(expenseInfo.toString());
+    }
+    return String.join(",", expenseStrings);
   }
 }

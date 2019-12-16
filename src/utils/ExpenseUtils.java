@@ -2,12 +2,16 @@ package utils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import model.ExpenseInfo;
 import model.ExpenseRegistry;
 import model.User;
+import model.UserRegistry;
 
 public class ExpenseUtils {
+
+  private static boolean simplify = false;
 
   public static void splitEqual(User user,
                                 long amount,
@@ -80,6 +84,26 @@ public class ExpenseUtils {
       otherUserBalance.put(user, balanceValue - amountToSplit);
     }
 
-    ExpenseRegistry.addExpense(new ExpenseInfo(user, otherUser));
+    addToExpenses(user, otherUser, amountToSplit);
+  }
+
+  private static void addToExpenses(User user,
+                                    User otherUser,
+                                    long amountToSplit) {
+    ExpenseRegistry.addExpense(new ExpenseInfo(user, otherUser, amountToSplit));
+  }
+
+  public static void switchSimplify() {
+    if(simplify) {
+      simplify = false;
+    } else {
+      simplify = true;
+    }
+  }
+
+  public static void simplifyExpenses() {
+    if(simplify) {
+
+    }
   }
 }
