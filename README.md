@@ -1,3 +1,8 @@
+# **High Level Design for SplitWise**
+Functional Requirements
+
+Non Functional Requirements
+
 # mock-machine-coding-2
 Welcome to the 2nd Mock Machine Coding Round by [workat.tech](http://workat.tech).
 
