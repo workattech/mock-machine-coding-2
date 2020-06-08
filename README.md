@@ -19,8 +19,8 @@
 Read will be more than writes in this system.Lets assume if each user has 20 contacts . So read vs write ratio will be 20:1.<br />
 ## Traffic estimates<br />
 Lets assume we have 20M new users per month with 20:1 read and write then we can expect 20*20M =>400M read<br />
-### Queries per Second (QPS) will be 20M / (30 days * 24 hours * 3600 sec) ~= 7.71 write/sec<br />
-### Consedering 20:1 read to write request 20 * 7.71 ~= 154.2 read/sec<br />
+#### Queries per Second (QPS) will be 20M / (30 days * 24 hours * 3600 sec) ~= 7.71 write/sec<br />
+#### Consedering 20:1 read to write request 20 * 7.71 ~= 154.2 read/sec<br />
 
 ## Storage Estimates<br />
 Lets assume we are saving the expense over the year of 5 years then 20M write request every month, total number of obects we<br /> 
