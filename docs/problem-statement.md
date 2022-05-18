@@ -59,8 +59,8 @@ User3 owes User4: 240 (0+240)
 
 
 ## Requirements
-- User: Each user should have a userId, name, email, mobile number.
-- Expense: Could either be EQUAL, EXACT or PERCENT
+- entity.User: Each user should have a userId, name, email, mobile number.
+- entity.SplitType: Could either be EQUAL, EXACT or PERCENT
 - Users can add any amount, select any type of expense and split with any of the available users.
 - The percent and amount provided could have decimals upto two decimal places.
 - In case of percent, you need to verify if the total sum of percentage shares is 100 or not.
@@ -73,7 +73,7 @@ User3 owes User4: 240 (0+240)
 
 - You can create a few users in your main method. No need to take it as input.
 - There will be 3 types of input:
-    - Expense in the format: ```EXPENSE <user-id-of-person-who-paid> <no-of-users> <space-separated-list-of-users> <EQUAL/EXACT/PERCENT> <space-separated-values-in-case-of-non-equal>``` 
+    - entity.SplitType in the format: ```EXPENSE <user-id-of-person-who-paid> <no-of-users> <space-separated-list-of-users> <EQUAL/EXACT/PERCENT> <space-separated-values-in-case-of-non-equal>``` 
     - Show balances for all: ```SHOW```
     - Show balances for a single user: ```SHOW <user-id>```
     
