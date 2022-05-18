@@ -1,0 +1,207 @@
+Enter operation 
+SHOW  
+for a specific user?
+n
+No balances
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+YES
+Enter user id
+u1
+No balances
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u2
+Enter total 
+1000
+Enter no of users 
+4
+enter user_ids 
+u1 u2 u3 u4
+Enter type of expense, EXACT, EQUAL or PERCENT 
+EQUAL
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+yes
+Enter user id
+u1
+u1 owes u2: 250
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+yes
+Enter user id
+u2
+u1 owes u2: 250
+u3 owes u2: 250
+u4 owes u2: 250
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+n
+u1 owes u2: 250
+u3 owes u2: 250
+u4 owes u2: 250
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u3
+Enter total 
+2000
+Enter no of users 
+3
+enter user_ids 
+u1 u2 u4
+Enter type of expense, EXACT, EQUAL or PERCENT 
+EXACT
+Enter amounts 
+1000 500 500
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+yes
+Enter user id
+u3
+u1 owes u3: 1000
+u2 owes u3: 250
+u4 owes u3: 500
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u1
+Enter total 
+1000
+Enter no of users 
+1
+enter user_ids 
+u3
+Enter type of expense, EXACT, EQUAL or PERCENT 
+PERCENT
+Enter percents 
+100
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+yes
+Enter user id
+u1
+u1 owes u2: 250
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+yes
+Enter user id
+u3
+u2 owes u3: 250
+u4 owes u3: 500
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u2
+Enter total 
+250
+Enter no of users 
+1
+enter user_ids 
+u3
+Enter type of expense, EXACT, EQUAL or PERCENT 
+EXACT
+Enter amounts 
+250
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+n
+u1 owes u2: 250
+u4 owes u2: 250
+u4 owes u3: 500
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u4
+Enter total 
+750
+Enter no of users 
+2
+enter user_ids 
+u2 u3
+Enter type of expense, EXACT, EQUAL or PERCENT 
+PERCENT
+Enter percents 
+25 70
+invalid_entry!!!
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u4
+Enter total 
+750
+Enter no of users 
+2
+enter user_ids 
+u2 u3
+Enter type of expense, EXACT, EQUAL or PERCENT 
+EXACT
+Enter amounts 
+250 500
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+n
+u1 owes u2: 250
+Press 1 to continue
+1
+Enter operation 
+EXPENSE
+Enter payer 
+u1
+Enter total 
+250
+Enter no of users 
+1
+enter user_ids 
+u2
+Enter type of expense, EXACT, EQUAL or PERCENT 
+EQUAL
+Press 1 to continue
+1
+Enter operation 
+SHOW
+for a specific user?
+n
+No balances
+Press 1 to continue
+0
