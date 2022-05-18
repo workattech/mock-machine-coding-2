@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/mock-machine-coding-2.iml" filepath="$PROJECT_DIR$/.idea/mock-machine-coding-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake-ladder/snake-ladder.iml" filepath="$PROJECT_DIR$/snake-ladder/snake-ladder.iml" />
       <module fileurl="file://$PROJECT_DIR$/splitwise/splitwise.iml" filepath="$PROJECT_DIR$/splitwise/splitwise.iml" />
     </modules>
   </component>
